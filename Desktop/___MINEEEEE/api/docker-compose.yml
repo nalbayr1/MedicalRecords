@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:15-alpine
+    restart: always
+    container_name: postgres-for-flashcards-api-nalbayr1
+    ports:
+      - '${DB_PORT}:5432' # HOST_PORT:CONTAINER_PORT
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
